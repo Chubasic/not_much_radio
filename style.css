@@ -1,0 +1,52 @@
+main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.system {
+  display: grid;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(15, 15, 14),
+    rgba(18, 18, 18, 0.923)
+  );
+  height: 90%;
+  width: 90%;
+  border-radius: 1rem;
+}
+
+.sol {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  align-self: center;
+  justify-self: center;
+  position: relative;
+  z-index: 2;
+  background-image: linear-gradient(
+    to top left,
+    rgba(246, 71, 71, 0.5),
+    rgba(255, 179, 0, 0.8)
+  );
+  backdrop-filter: blur(40px);
+  box-shadow: 0 0 10px 5px rgba(171, 55, 31, 0.519),
+    0 0 15px 3px rgba(255, 179, 0, 0.697);
+}
+
+.sol div.planet {
+  z-index: 1;
+  /* size? mb 2 */
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  /* color should be randomized by js => for dev */
+  background-image: linear-gradient(
+    to top left,
+    rgba(71, 246, 124, 0.5),
+    rgba(15, 91, 179, 0.8)
+  );
+}
