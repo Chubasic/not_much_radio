@@ -38,15 +38,8 @@ main {
 
 .sol div.planet {
   z-index: 1;
-  /* size? mb 2 */
   height: 20px;
   width: 20px;
   border-radius: 50%;
   position: absolute;
-  /* color should be randomized by js => for dev */
-  background-image: linear-gradient(
-    to top left,
-    rgba(71, 246, 124, 0.5),
-    rgba(15, 91, 179, 0.8)
-  );
 }
