@@ -8,7 +8,7 @@ const maxDegrees = 360;
  * @return {number}
  */
 function getRadian(degrees) {
-  return (degrees * Math.PI) / 180;
+  return (degrees * p) / 180;
 }
 /**
  *
@@ -27,6 +27,6 @@ export default function ({ radius, speed, planet, startPosition = 0 }) {
     planet.style.left = `${getRadian(deg) * radius}px`;
     planet.style.top = `${getRadian(deg) * radius}px`;
   }
-  const rotation = setInterval(rotate, speed); // make speed planet specific
+  const rotation = setInterval(rotate, speed);
   return { ineterval: rotation };
 }

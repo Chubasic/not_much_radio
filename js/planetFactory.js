@@ -25,6 +25,16 @@ function setPlanetColor(elem, gradient) {
   return elem;
 }
 /**
+ * Not a clear function
+ *
+ * @param {HTMLDivElement} sol
+ * @param {HTMLDivElement} elem
+ */
+function appendToSol(sol, elem) {
+  sol.appendChild(elem);
+}
+
+/**
  *
  *
  * @export
@@ -33,16 +43,19 @@ function setPlanetColor(elem, gradient) {
  * @return {any[]}
  */
 export default function (sol, conf) {
+  const appendToSystem = appendToSol.bind(this, sol);
   const system =
     conf.isArray() && sol
       ? {
-          system: conf.map(({ rgbaMain, rgbaSec, radius, speed }) => {
+          system: conf.reduce((acc, { rgbaMain, rgbaSec, radius, speed }) => {
             const id = Math.random().toString(36).substring(7);
             let element = createHTMlElement(id);
             element = setPlanetColor(element, { rgbaMain, rgbaSec });
-            trajectory({ radius, speed, planet: element });
-            return element;
-          }),
+            const interval = trajectory({ radius, speed, planet: element });
+            appendToSystem(element);
+            acc.push({ htmlElem: element, interval });
+            return acc;
+          }, []),
           err: null,
         }
       : { system: [], err: new Error("Invalid config param") };

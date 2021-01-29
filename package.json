@@ -4,7 +4,8 @@
   "description": "Random solar system in some another universe I guess",
   "main": "index.js",
   "scripts": {
-    "test": "null"
+    "test": "null",
+    "build": "esbuild index.js --bundle --minify --sourcemap --outfile=bundle.js"
   },
   "repository": {
     "type": "git",
@@ -13,6 +14,6 @@
   "author": "Chubasic",
   "license": "MIT",
   "dependencies": {
-    "webpack": "^5.18.0"
+    "esbuild": "^0.8.36"
   }
 }
