@@ -48,10 +48,15 @@ export default function (sol, conf) {
     Array.isArray(conf) && sol
       ? {
           system: conf.reduce(
-            (acc, { rgbaMain, rgbaSec, radius, speed, id }) => {
+            (acc, { rgbaMain, rgbaSec, radius, speed, id, startPosition }) => {
               let element = createHTMlElement(id);
               element = setPlanetColor(element, { rgbaMain, rgbaSec });
-              const interval = trajectory({ radius, speed, planet: element });
+              const interval = trajectory({
+                radius,
+                speed,
+                planet: element,
+                startPosition,
+              });
               appendToSystem(element);
               acc.push({ htmlElem: element, interval });
               return acc;
