@@ -24,8 +24,8 @@ export default function ({ radius, speed, planet, startPosition = 0 }) {
     if (deg === maxDegrees) {
       deg = 0;
     }
-    planet.style.left = `${getRadian(deg) * radius}px`;
-    planet.style.top = `${getRadian(deg) * radius}px`;
+    planet.style.left = `${m.sin(getRadian(deg)) * radius}px`;
+    planet.style.top = `${m.cos(getRadian(deg)) * radius}px`;
   }
   const rotation = setInterval(rotate, speed);
   return { ineterval: rotation };

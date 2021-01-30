@@ -4,7 +4,7 @@ import planetFactory from "./js/planetFactory";
 (() => {
   console.log("start");
   const solar = document.querySelector(".sol");
-  const config = confFactory(Math.random() * (2 - 6) + 2);
+  const config = confFactory(5);
   const {
     system: { htmlElem, interval },
     err,

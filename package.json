@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "null",
-    "build": "esbuild index.js --bundle --minify --sourcemap --outfile=bundle.js"
+    "build": "esbuild index.js --bundle --minify --sourcemap --outfile=./dist/bundle.js"
   },
   "repository": {
     "type": "git",

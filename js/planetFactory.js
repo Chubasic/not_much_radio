@@ -21,7 +21,7 @@ function createHTMlElement(id) {
  * @return {HTMLDivElement}
  */
 function setPlanetColor(elem, gradient) {
-  elem.style.backgroundImage = `linear-gradient(to top right, ${gradient.rgbaMain}, ${gradient.rgbaSec})`;
+  elem.style.backgroundImage = `linear-gradient(to top right, rgba(${gradient.rgbaMain}), rgba(${gradient.rgbaSec}))`;
   return elem;
 }
 /**
@@ -45,7 +45,7 @@ function appendToSol(sol, elem) {
 export default function (sol, conf) {
   const appendToSystem = appendToSol.bind(this, sol);
   const system =
-    conf.isArray() && sol
+    Array.isArray(conf) && sol
       ? {
           system: conf.reduce(
             (acc, { rgbaMain, rgbaSec, radius, speed, id }) => {
