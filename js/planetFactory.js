@@ -47,15 +47,17 @@ export default function (sol, conf) {
   const system =
     conf.isArray() && sol
       ? {
-          system: conf.reduce((acc, { rgbaMain, rgbaSec, radius, speed }) => {
-            const id = Math.random().toString(36).substring(7);
-            let element = createHTMlElement(id);
-            element = setPlanetColor(element, { rgbaMain, rgbaSec });
-            const interval = trajectory({ radius, speed, planet: element });
-            appendToSystem(element);
-            acc.push({ htmlElem: element, interval });
-            return acc;
-          }, []),
+          system: conf.reduce(
+            (acc, { rgbaMain, rgbaSec, radius, speed, id }) => {
+              let element = createHTMlElement(id);
+              element = setPlanetColor(element, { rgbaMain, rgbaSec });
+              const interval = trajectory({ radius, speed, planet: element });
+              appendToSystem(element);
+              acc.push({ htmlElem: element, interval });
+              return acc;
+            },
+            []
+          ),
           err: null,
         }
       : { system: [], err: new Error("Invalid config param") };
