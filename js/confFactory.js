@@ -15,7 +15,7 @@ export default function confFactory(iterations, ...args) {
     accum.push({
       radius,
       id: Math.random().toString(36).substring(7),
-      speed: Math.floor(Math.random() * (10 - 2) + 2),
+      speed: Math.floor(Math.random() * (30 - 10) + 10),
       startPosition: Math.floor(Math.random() * (200 - 50) + 50),
       rgbaMain: randRGB(),
       rgbaSec: randRGB(),

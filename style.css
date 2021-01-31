@@ -1,3 +1,10 @@
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(15, 15, 14),
+    rgba(18, 18, 18, 0.923)
+  );
+}
 main {
   height: 100vh;
   display: flex;
@@ -6,16 +13,15 @@ main {
   justify-content: center;
 }
 
+iframe {
+  position: relative;
+  z-index: 2;
+}
+
 .system {
   display: grid;
-  background-image: linear-gradient(
-    to bottom right,
-    rgb(15, 15, 14),
-    rgba(18, 18, 18, 0.923)
-  );
   height: 100%;
   width: 100%;
-  border-radius: 1rem;
 }
 
 .sol {
@@ -24,8 +30,8 @@ main {
   border-radius: 50%;
   align-self: center;
   justify-self: center;
-  position: relative;
-  z-index: 2;
+  position: fixed;
+  transition: all 0.2s ease-in-out;
   background-image: linear-gradient(
     to top left,
     rgba(246, 71, 71, 0.5),
@@ -36,6 +42,10 @@ main {
     0 0 15px 3px rgba(255, 179, 0, 0.697);
 }
 
+.sol-scrolled {
+  transform: scale(4);
+}
+
 .sol div.planet {
   z-index: 1;
   height: 32px;
@@ -43,6 +53,5 @@ main {
   border-radius: 50%;
   position: absolute;
   box-shadow: 0 0 10px 5px rgba(102, 208, 243, 0.519),
-  0 0 15px 3px rgba(69, 150, 152, 0.635);
-}
+    0 0 15px 3px rgba(69, 150, 152, 0.635);
 }
