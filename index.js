@@ -11,7 +11,7 @@ import planetFactory from "./js/planetFactory";
 
     if (
       elem.documentElement.scrollHeight - elem.documentElement.scrollTop ===
-      elem.documentElement.clientHeight
+      elem.documentElement.clientHeight - 200
     ) {
       solar.classList.add("sol-scrolled");
     } else {
