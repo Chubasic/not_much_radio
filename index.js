@@ -8,10 +8,9 @@ import planetFactory from "./js/planetFactory";
   const config = confFactory(5);
   document.addEventListener("scroll", (e) => {
     const elem = e.target;
-
     if (
-      elem.documentElement.scrollHeight - elem.documentElement.scrollTop ===
-      elem.documentElement.clientHeight - 200
+      elem.documentElement.scrollHeight - elem.documentElement.scrollTop <=
+      elem.documentElement.clientHeight
     ) {
       solar.classList.add("sol-scrolled");
     } else {
